@@ -1,0 +1,77 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/static/css/all.css"/>
+	<title></title>
+	<style type="text/css">
+		[v-cloak] {
+		    display: none !important;
+		}
+		
+	.top__bd {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+		
+		
+	</style>
+</head>
+<body>
+	<div id="root" style="width: 100%;">
+		<div class="Swipe Swipe_full Destructor">
+			<div style="width: 100%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+				<div style="width: 100%;">
+					<% include include/common-header.html %>
+					<div class="Swipe Swipe_full container-scroll Destructor">
+						<div style=" transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+							<div style="width: 100%;" id="app">
+								<div class="search">
+									<div class="top__bd">
+										<ul class="book-list">
+											<li v-for="item in category_info">
+												
+												<div class="u-book">
+													<div class="cnt">
+														
+														<div class="book-cover">
+															<a href="/book?id={{ item.fictionId }}">
+															<img alt="{{ item.title }}" v-bind:src="item.cover">
+															<div class="u-tagRT"></div>
+														</div>
+														<div class="info">
+															<h3 class="title single-line">{{item.title}}</h3>
+															<p class="summary">{{ item.content }}</p>
+															<div class="wrap">
+																<p class="author single-line">
+																	<span>{{ item.authors }}</span>
+																</p>
+															</div>
+														</div>
+														</a>
+													</div>
+												</div>
+												
+											</li>
+										</ul>
+										
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script src="/static/script/vue.min.js"></script>
+		<script src="/static/script/zepto.min.js"></script>
+		<script src="/static/script/pages/category_info.js"></script>
+</body>
+	</html>
